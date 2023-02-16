@@ -11,9 +11,17 @@ const output = document.querySelector("#output")
 btn.addEventListener("click", diceRoll)
 
 function diceRoll() {
-    console.log("clicked")
-    console.log(Math.floor(Math.random() * 20) + 1)
-    output.innerText = `You rolled a ${(Math.floor(Math.random() * 20) + 1)}`
+    // console.log("clicked");
+    const result = (Math.floor(Math.random() * 20) + 1);
+    console.log(result)
+    if (result === 1) {
+      output.innerText = "You rolled a NAT 1!"
+    } else if (result === 20) {
+      output.innerText = "You rolled a NAT 20!"
+    } else {
+      output.innerText = `You rolled a ${(result)}`
+    }
+    
 }
 
 // console.log(`You rolled a ${diceRoll(d12)}!`)
