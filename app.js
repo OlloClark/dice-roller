@@ -7,6 +7,15 @@ const d6 = 6
 const btn = document.querySelector("#btn")
 const output = document.querySelector("#output")
 
+// let diceSelector = document.getElementById("mySelect");
+// let option = diceSelector.options[diceSelector.selectedIndex].value;
+// console.log(option)
+
+function returnDice() {
+  let dice = document.getElementById("mySelect").value;
+  console.log(`${dice} selected`)
+}
+
 
 btn.addEventListener("click", diceRoll)
 
