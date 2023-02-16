@@ -6,10 +6,10 @@ sizeSelect.addEventListener("change", offerAdvantage)
 
 
 function offerAdvantage() {
-  const diceSize = parseInt(document.getElementById("sizeSelect").value)
+  const diceSize = parseInt(document.getElementById("sizeSelect").value);
   diceSize === 20
-    ? document.getElementById("advantage").innerText = "roll with advantage?"
-    : document.getElementById("advantage").innerText = ""
+    ? document.getElementById("advantage").style.visibility = "visible"
+    : document.getElementById("advantage").style.visibility = "hidden"
 
 }
 
