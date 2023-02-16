@@ -7,9 +7,10 @@ sizeSelect.addEventListener("change", offerAdvantage)
 
 function offerAdvantage() {
   const diceSize = parseInt(document.getElementById("sizeSelect").value)
-  if (diceSize === 20) {
-    document.getElementById("advantage").innerText = "roll with advantage?"
-  }
+  diceSize === 20
+    ? document.getElementById("advantage").innerText = "roll with advantage?"
+    : document.getElementById("advantage").innerText = ""
+
 }
 
 offerAdvantage()
