@@ -1,6 +1,18 @@
 const btn = document.querySelector("#btn")
 const output = document.querySelector("#output")
+const sizeSelect = document.querySelector("#sizeSelect")
 btn.addEventListener("click", diceRoll)
+sizeSelect.addEventListener("change", offerAdvantage)
+
+
+function offerAdvantage() {
+  const diceSize = parseInt(document.getElementById("sizeSelect").value)
+  if (diceSize === 20) {
+    document.getElementById("advantage").innerText = "roll with advantage?"
+  }
+}
+
+offerAdvantage()
 
 
 function diceRoll() {
