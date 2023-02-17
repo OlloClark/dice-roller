@@ -2,6 +2,7 @@ const btn = document.querySelector("#btn")
 const output = document.querySelector("#output")
 const sizeSelect = document.querySelector("#sizeSelect")
 const yesAdvantage = document.getElementById("yesAdvantage")
+const yesDisadvantage = document.getElementById("yesDisadvantage")
 
 btn.addEventListener("click", diceRoll)
 sizeSelect.addEventListener("change", offerAdvantage)
@@ -17,6 +18,10 @@ function offerAdvantage() {
 
 offerAdvantage()
 
+function rollExtra() {
+  return (Math.floor(Math.random() * 20 * + 1))
+}
+
 function diceRoll() {
   const diceSize = parseInt(document.getElementById("sizeSelect").value)
   const quantitySelect = parseInt(document.getElementById("quantitySelect").value)
@@ -26,7 +31,11 @@ function diceRoll() {
 
     console.log(result)
     if (yesAdvantage.checked) {
-      output.innerText = "rolling with adv!"
+      const secondDie = rollExtra()
+      output.innerText = `rolling with advantage: ${secondDie} and ${result}`
+    } else if (yesDisadvantage.checked) {
+      const secondDie = rollExtra()
+      output.innerText = `rolling with disadvantage: ${secondDie} and ${result}`
     } else if (result === 1 && diceSize === 20) {
       output.innerText = "NAT 1!"
     } else if (result === 20 && diceSize === 20) {
@@ -39,8 +48,3 @@ function diceRoll() {
 }
 
 
-yesAdvantage.addEventListener("change", isChecked)
-
-function isChecked() {
-  yesAdvantage.checked ? console.log("checked") : console.log("unchecked");
-}
